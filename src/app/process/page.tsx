@@ -51,10 +51,10 @@ export default function ProcessPage() {
         <SectionHeader id="layers" title={processPage.layers.title} intro={processPage.layers.intro} onDark />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {processPage.layers.items.map((l) => (
-            <article key={l.title} className="rounded-2xl border border-paper/10 bg-navy p-8">
+            <article key={l.title} className="rounded-2xl border border-paper/10 bg-charcoal p-8">
               <Eyebrow onDark>{l.eyebrow}</Eyebrow>
               <h3 className="mt-4 text-2xl font-semibold">{l.title}</h3>
-              <p className="mt-3 text-navy-100">{l.copy}</p>
+              <p className="mt-3 text-smoke">{l.copy}</p>
               <p className="mt-6 text-sm font-semibold text-orange">{l.meta}</p>
             </article>
           ))}

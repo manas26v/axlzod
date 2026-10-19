@@ -85,7 +85,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
               ))}
             </ul>
           </div>
-          <aside className="h-fit rounded-2xl bg-navy p-8 text-paper">
+          <aside className="h-fit rounded-2xl bg-charcoal p-8 text-paper">
             <h2 className="text-xl font-semibold">What you get</h2>
             <div className="mt-6">
               <CheckList items={service.deliverables} onDark />
@@ -98,10 +98,10 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
           <SectionHeader id="how" eyebrow="How it works" title="From first conversation to running system" onDark />
           <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {service.steps.map((s, i) => (
-              <li key={s.title} className="rounded-2xl border border-paper/10 bg-navy-800 p-6">
+              <li key={s.title} className="rounded-2xl border border-paper/10 bg-charcoal-800 p-6">
                 <span className="font-display text-3xl font-semibold text-orange">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-1 text-sm text-navy-100">{s.desc}</p>
+                <p className="mt-1 text-sm text-smoke">{s.desc}</p>
               </li>
             ))}
           </ol>

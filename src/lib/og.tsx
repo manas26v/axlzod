@@ -3,7 +3,7 @@ import { site } from "./site";
 
 export const ogSize = { width: 1200, height: 630 };
 
-/** Shared branded Open Graph card: black background, navy glow, orange accent. */
+/** Shared branded Open Graph card: black background, charcoal glow, orange accent. */
 export function renderOg({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
   return new ImageResponse(
     (
@@ -15,7 +15,7 @@ export function renderOg({ eyebrow, title, subtitle }: { eyebrow: string; title:
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 55%, #0b1d3a 100%)",
+          background: "linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 55%, #161616 100%)",
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -44,9 +44,9 @@ export function renderOg({ eyebrow, title, subtitle }: { eyebrow: string; title:
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ fontSize: 26, color: "#ff6b00", textTransform: "uppercase", letterSpacing: 4 }}>{eyebrow}</div>
           <div style={{ fontSize: title.length > 60 ? 56 : 68, fontWeight: 700, lineHeight: 1.08, maxWidth: 1050 }}>{title}</div>
-          {subtitle && <div style={{ fontSize: 28, color: "#dfe6f2", maxWidth: 1000 }}>{subtitle}</div>}
+          {subtitle && <div style={{ fontSize: 28, color: "#d4d4d4", maxWidth: 1000 }}>{subtitle}</div>}
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#dfe6f2" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#d4d4d4" }}>
           <span>{site.tagline}</span>
           <span>{site.url.replace(/^https?:\/\//, "")}</span>
         </div>

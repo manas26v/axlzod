@@ -19,7 +19,7 @@ export function ContactSection({ title, eyebrow = "Contact" }: { title: string; 
           <ol className="mt-4 space-y-4">
             {contactCopy.nextSteps.map((step, i) => (
               <li key={step} className="flex gap-4">
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy text-sm font-semibold text-paper">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-charcoal text-sm font-semibold text-paper">
                   {i + 1}
                 </span>
                 <span className="pt-1 text-ink-70">{step}</span>
@@ -27,9 +27,9 @@ export function ContactSection({ title, eyebrow = "Contact" }: { title: string; 
             ))}
           </ol>
 
-          <div className="mt-10 rounded-2xl bg-navy p-6 text-paper">
+          <div className="mt-10 rounded-2xl bg-charcoal p-6 text-paper">
             <p className="font-semibold">Senior architect</p>
-            <p className="text-sm text-navy-100">Joins every first conversation</p>
+            <p className="text-sm text-smoke">Joins every first conversation</p>
             <ul className="mt-5 space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-orange" aria-hidden="true" />

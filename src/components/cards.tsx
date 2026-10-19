@@ -11,10 +11,10 @@ export function ServiceCard({ service, index }: { service: Service; index?: numb
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group relative flex h-full flex-col rounded-2xl border border-line bg-paper p-6 transition-all hover:-translate-y-0.5 hover:border-navy hover:shadow-lg"
+      className="group relative flex h-full flex-col rounded-2xl border border-line bg-paper p-6 transition-all hover:-translate-y-0.5 hover:border-charcoal hover:shadow-lg"
     >
       <div className="flex items-start justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy text-orange">
+        <span className="grid h-11 w-11 place-items-center rounded-xl bg-charcoal text-orange">
           <Icon name={service.icon} />
         </span>
         {index !== undefined && <span className="font-display text-sm text-ink-60">{String(index + 1).padStart(2, "0")}</span>}
@@ -35,14 +35,14 @@ export function IndustryCard({ industry }: { industry: Industry }) {
   return (
     <Link
       href={`/industries/${industry.slug}`}
-      className="group flex h-full flex-col rounded-2xl border border-paper/10 bg-navy-800 p-6 text-paper transition-colors hover:border-orange hover:bg-navy-700"
+      className="group flex h-full flex-col rounded-2xl border border-paper/10 bg-charcoal-800 p-6 text-paper transition-colors hover:border-orange hover:bg-charcoal-700"
     >
       <span className="grid h-11 w-11 place-items-center rounded-xl bg-orange text-ink">
         <Icon name={industry.icon} />
       </span>
       <p className="mt-6 text-xs font-medium uppercase tracking-wider text-orange">{industry.compliance.join(" · ")}</p>
       <h3 className="mt-2 text-xl font-semibold">{industry.label}</h3>
-      <p className="mt-3 flex-1 text-sm text-navy-100">{industry.short}</p>
+      <p className="mt-3 flex-1 text-sm text-smoke">{industry.short}</p>
       <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-orange">
         Explore {industry.label}
         <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -58,8 +58,8 @@ export function ImpactStats({ impact, onDark = false }: { impact: string[]; onDa
         const { value, label } = splitImpact(item);
         return (
           <div key={item} className="flex flex-col-reverse">
-            <dt className={`text-xs ${onDark ? "text-navy-100" : "text-ink-60"}`}>{label}</dt>
-            <dd className={`font-display text-2xl font-semibold sm:text-3xl ${onDark ? "text-orange" : "text-navy"}`}>{value}</dd>
+            <dt className={`text-xs ${onDark ? "text-smoke" : "text-ink-60"}`}>{label}</dt>
+            <dd className={`font-display text-2xl font-semibold sm:text-3xl ${onDark ? "text-orange" : "text-charcoal"}`}>{value}</dd>
           </div>
         );
       })}
@@ -83,7 +83,7 @@ export function CaseStudyCard({ cs, featured = false }: { cs: CaseStudy; feature
           {cs.title}
         </Link>
       </h3>
-      <p className={`mt-3 flex-1 ${featured ? "text-navy-100" : "text-ink-60"}`}>{cs.summary}</p>
+      <p className={`mt-3 flex-1 ${featured ? "text-smoke" : "text-ink-60"}`}>{cs.summary}</p>
       <div className="mt-6">
         <ImpactStats impact={cs.impact} onDark={featured} />
       </div>
@@ -114,13 +114,13 @@ export function ProcessGrid({ phases }: { phases: ProcessPhase[] }) {
         <li key={p.n} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
           <div className="flex items-center justify-between">
             <span className="font-display text-4xl font-semibold text-orange">{p.n}</span>
-            <span className="rounded-full bg-navy-50 px-3 py-1 text-xs font-medium text-navy">{p.duration}</span>
+            <span className="rounded-full bg-fog px-3 py-1 text-xs font-medium text-charcoal">{p.duration}</span>
           </div>
           <h3 className="mt-4 text-xl font-semibold">{p.title}</h3>
           <p className="mt-2 text-ink-60">{p.desc}</p>
           <div className="mt-5 grid gap-5 border-t border-line pt-5 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-navy">Activities</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-charcoal">Activities</h4>
               <ul className="mt-2 space-y-1.5 text-sm text-ink-70">
                 {p.activities.map((a) => (
                   <li key={a}>{a}</li>
@@ -128,7 +128,7 @@ export function ProcessGrid({ phases }: { phases: ProcessPhase[] }) {
               </ul>
             </div>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-navy">Deliverables</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-charcoal">Deliverables</h4>
               <ul className="mt-2 space-y-1.5 text-sm text-ink-70">
                 {p.deliverables.map((d) => (
                   <li key={d}>{d}</li>
@@ -171,7 +171,7 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
     .map((n) => n[0])
     .join("");
   return (
-    <figure className="flex h-full flex-col rounded-2xl bg-navy-800 p-8 text-paper">
+    <figure className="flex h-full flex-col rounded-2xl bg-charcoal-800 p-8 text-paper">
       <blockquote className="flex-1 font-display text-xl leading-relaxed">“{t.quote}”</blockquote>
       <figcaption className="mt-8 flex items-center gap-3">
         <span className="grid h-11 w-11 place-items-center rounded-full bg-orange font-semibold text-ink" aria-hidden="true">
@@ -179,7 +179,7 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
         </span>
         <span>
           <span className="block font-semibold">{t.name}</span>
-          <span className="block text-sm text-navy-100">{t.role}</span>
+          <span className="block text-sm text-smoke">{t.role}</span>
         </span>
       </figcaption>
     </figure>
@@ -191,8 +191,8 @@ export function StatsBar({ stats, onDark = false }: { stats: { value: string; la
     <dl className="grid grid-cols-2 gap-8 lg:grid-cols-4">
       {stats.map((s) => (
         <div key={s.label} className="flex flex-col-reverse border-l-2 border-orange pl-5">
-          <dt className={`mt-1 text-sm ${onDark ? "text-navy-100" : "text-ink-60"}`}>{s.label}</dt>
-          <dd className={`font-display text-4xl font-semibold sm:text-5xl ${onDark ? "text-paper" : "text-navy"}`}>{s.value}</dd>
+          <dt className={`mt-1 text-sm ${onDark ? "text-smoke" : "text-ink-60"}`}>{s.label}</dt>
+          <dd className={`font-display text-4xl font-semibold sm:text-5xl ${onDark ? "text-paper" : "text-charcoal"}`}>{s.value}</dd>
         </div>
       ))}
     </dl>

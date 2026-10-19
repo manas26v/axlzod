@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
-/* Axlzod palette: black & white base, navy for depth, orange for action. */
+/* Axlzod palette: black & white with orange for action. Charcoal greys add depth between black sections. */
 @theme {
   --color-ink: #0a0a0a;
   --color-ink-70: #3d3d3d;
   --color-ink-60: #5c5c5c;
   --color-paper: #ffffff;
-  --color-mist: #f5f6f8;
-  --color-line: #e4e7ec;
+  --color-mist: #f5f5f5;
+  --color-line: #e5e5e5;
 
-  --color-navy: #0b1d3a;
-  --color-navy-800: #102a52;
-  --color-navy-700: #18376a;
-  --color-navy-100: #dfe6f2;
-  --color-navy-50: #eef2f8;
+  --color-charcoal: #161616;
+  --color-charcoal-800: #1f1f1f;
+  --color-charcoal-700: #2e2e2e;
+  /* secondary text on dark backgrounds */
+  --color-smoke: #d4d4d4;
+  /* subtle chip / tag background on white */
+  --color-fog: #f0f0f0;
 
   --color-orange: #ff6b00;
   --color-orange-600: #e85d00;

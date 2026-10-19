@@ -6,11 +6,11 @@ export function Container({ children, className = "" }: { children: ReactNode; c
   return <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>;
 }
 
-type Tone = "light" | "mist" | "navy" | "dark";
+type Tone = "light" | "mist" | "charcoal" | "dark";
 const toneClass: Record<Tone, string> = {
   light: "bg-paper text-ink",
   mist: "bg-mist text-ink",
-  navy: "bg-navy text-paper",
+  charcoal: "bg-charcoal text-paper",
   dark: "bg-ink text-paper",
 };
 
@@ -71,7 +71,7 @@ export function SectionHeader({
         <Tag id={id} className={`mt-3 text-3xl font-semibold sm:text-4xl lg:text-5xl ${onDark ? "text-paper" : "text-ink"}`}>
           {title}
         </Tag>
-        {intro && <p className={`mt-4 text-lg ${onDark ? "text-navy-100" : "text-ink-60"}`}>{intro}</p>}
+        {intro && <p className={`mt-4 text-lg ${onDark ? "text-smoke" : "text-ink-60"}`}>{intro}</p>}
       </div>
       {action}
     </div>
@@ -81,7 +81,7 @@ export function SectionHeader({
 type ButtonVariant = "primary" | "secondary" | "ghost" | "light";
 const buttonClass: Record<ButtonVariant, string> = {
   primary: "bg-orange text-ink hover:bg-orange-600",
-  secondary: "bg-navy text-paper hover:bg-navy-800",
+  secondary: "bg-charcoal text-paper hover:bg-charcoal-800",
   ghost: "border border-ink/15 text-ink hover:border-ink hover:bg-ink hover:text-paper",
   light: "border border-paper/25 text-paper hover:bg-paper hover:text-ink",
 };
@@ -126,7 +126,7 @@ export function Chip({ children, onDark = false }: { children: ReactNode; onDark
   return (
     <span
       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
-        onDark ? "bg-paper/10 text-paper" : "bg-navy-50 text-navy"
+        onDark ? "bg-paper/10 text-paper" : "bg-fog text-charcoal"
       }`}
     >
       {children}
@@ -140,7 +140,7 @@ export function CheckList({ items, onDark = false }: { items: string[]; onDark?:
       {items.map((item) => (
         <li key={item} className="flex gap-3">
           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange" aria-hidden="true" />
-          <span className={onDark ? "text-navy-100" : "text-ink-70"}>{item}</span>
+          <span className={onDark ? "text-smoke" : "text-ink-70"}>{item}</span>
         </li>
       ))}
     </ul>

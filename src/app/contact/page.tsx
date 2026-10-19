@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero crumbs={[{ name: "Contact", path: "/contact" }]} eyebrow="Contact" title="Let's Build Something Extraordinary" intro={contactCopy.intro}>
-        <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-navy-100">
+        <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-smoke">
           {contactCopy.assurances.map((a) => (
             <li key={a} className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-orange" aria-hidden="true" />
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 max-w-2xl text-navy-100">
+        <p className="mt-6 max-w-2xl text-smoke">
           <strong className="text-paper">Who you will meet. </strong>
           {contactCopy.whoYouMeet}
         </p>

@@ -56,13 +56,13 @@ export default function AboutPage() {
         </ol>
       </Section>
 
-      <Section tone="navy" labelledBy="values">
+      <Section tone="charcoal" labelledBy="values">
         <SectionHeader id="values" eyebrow={about.values.eyebrow} title={about.values.title} onDark />
         <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {principles.map((p) => (
-            <li key={p.title} className="rounded-2xl border border-paper/10 bg-navy-800 p-6">
+            <li key={p.title} className="rounded-2xl border border-paper/10 bg-charcoal-800 p-6">
               <h3 className="text-xl font-semibold">{p.title}</h3>
-              <p className="mt-2 text-navy-100">{p.desc}</p>
+              <p className="mt-2 text-smoke">{p.desc}</p>
             </li>
           ))}
         </ul>

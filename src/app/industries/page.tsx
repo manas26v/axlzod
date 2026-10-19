@@ -30,7 +30,7 @@ export default function IndustriesPage() {
         </ButtonLink>
       </PageHero>
 
-      <Section tone="navy" labelledBy="sectors">
+      <Section tone="charcoal" labelledBy="sectors">
         <SectionHeader
           id="sectors"
           eyebrow="Eight sectors"

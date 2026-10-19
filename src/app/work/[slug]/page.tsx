@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         intro={cs.summary}
       />
 
-      <Section tone="navy" labelledBy="impact">
+      <Section tone="charcoal" labelledBy="impact">
         <h2 id="impact" className="text-sm font-semibold uppercase tracking-[0.18em] text-orange">
           Business impact
         </h2>
@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         </div>
         <dl className="mt-12 grid gap-6 border-t border-paper/10 pt-8 sm:grid-cols-3">
           <div>
-            <dt className="text-xs uppercase tracking-wider text-navy-100">Industry</dt>
+            <dt className="text-xs uppercase tracking-wider text-smoke">Industry</dt>
             <dd className="mt-1 font-semibold">
               {industry ? (
                 <Link href={`/industries/${industry.slug}`} className="hover:text-orange">
@@ -73,11 +73,11 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             </dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-wider text-navy-100">Timeline</dt>
+            <dt className="text-xs uppercase tracking-wider text-smoke">Timeline</dt>
             <dd className="mt-1 font-semibold">{cs.duration}</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-wider text-navy-100">Team</dt>
+            <dt className="text-xs uppercase tracking-wider text-smoke">Team</dt>
             <dd className="mt-1 font-semibold">{cs.team}</dd>
           </div>
         </dl>
@@ -87,10 +87,10 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-2xl bg-ink p-8 text-paper">
             <h2 className="text-xl font-semibold text-orange">Business challenge</h2>
-            <p className="mt-4 text-lg text-navy-100">{cs.challenge}</p>
+            <p className="mt-4 text-lg text-smoke">{cs.challenge}</p>
           </div>
           <div className="rounded-2xl border border-line bg-mist p-8">
-            <h2 className="text-xl font-semibold text-navy">Solution</h2>
+            <h2 className="text-xl font-semibold text-charcoal">Solution</h2>
             <p className="mt-4 text-lg text-ink-70">{cs.solution}</p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         </ol>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-navy">Technology stack</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal">Technology stack</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {cs.stack.map((t) => (
                 <li key={t}>
@@ -119,7 +119,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-navy">Services involved</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal">Services involved</h3>
             <ul className="mt-4 space-y-2">
               {servicesBySlugs(cs.services).map((s) => (
                 <li key={s.slug}>

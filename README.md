@@ -17,7 +17,7 @@ Set `NEXT_PUBLIC_SITE_URL` (see `.env.example`) to the production domain before 
 | Brand, contact details, nav | `src/lib/site.ts` |
 | Services, industries, case studies, process, tech stack, testimonials | `src/content/data.ts` |
 | Page copy (headings, intros, section text) | `src/content/pages.ts` |
-| Colour tokens (black / white / orange / navy) | `src/app/globals.css` (`@theme`) |
+| Colour tokens (black / white / orange) | `src/app/globals.css` (`@theme`) |
 | Shared UI | `src/components/` |
 | SEO helpers (metadata + JSON-LD) | `src/lib/seo.ts`, OG cards in `src/lib/og.tsx` |
 

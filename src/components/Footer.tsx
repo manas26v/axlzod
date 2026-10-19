@@ -22,7 +22,7 @@ function Column({ title, links }: { title: string; links: { label: string; href:
       <ul className="mt-4 space-y-2.5">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="text-sm text-navy-100 transition-colors hover:text-paper">
+            <Link href={l.href} className="text-sm text-smoke transition-colors hover:text-paper">
               {l.label}
             </Link>
           </li>
@@ -40,13 +40,13 @@ const serviceLinks = (slugs: string[]) =>
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-paper">
+    <footer className="bg-charcoal text-paper">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Logo />
-            <p className="mt-4 max-w-sm text-sm text-navy-100">{site.tagline}</p>
-            <address className="mt-6 space-y-2 text-sm not-italic text-navy-100">
+            <p className="mt-4 max-w-sm text-sm text-smoke">{site.tagline}</p>
+            <address className="mt-6 space-y-2 text-sm not-italic text-smoke">
               <p>
                 <a href={`mailto:${site.email}`} className="hover:text-orange">
                   {site.email}
@@ -79,7 +79,7 @@ export function Footer() {
             <Column title="Scale" links={serviceLinks(scale)} />
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-4 border-t border-paper/10 pt-8 text-sm text-navy-100 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-paper/10 pt-8 text-sm text-smoke sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {site.copyrightYear} {site.name}. {site.tagline}
           </p>

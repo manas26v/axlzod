@@ -61,7 +61,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <p className="text-xl text-ink-70">{industry.overview}</p>
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-navy">Standards we build to</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-charcoal">Standards we build to</h2>
             <ul className="mt-4 flex flex-wrap gap-2">
               {industry.compliance.map((c) => (
                 <li key={c}>
@@ -80,7 +80,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
             <h3 className="text-lg font-semibold text-orange">Challenges</h3>
             <ul className="mt-5 space-y-4">
               {industry.challenges.map((c) => (
-                <li key={c} className="border-l-2 border-orange pl-4 text-navy-100">
+                <li key={c} className="border-l-2 border-orange pl-4 text-smoke">
                   {c}
                 </li>
               ))}
@@ -120,7 +120,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
         </Section>
       )}
 
-      <Section tone="navy" labelledBy="other">
+      <Section tone="charcoal" labelledBy="other">
         <SectionHeader id="other" eyebrow="Explore" title="Other industries" onDark />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {others.map((i) => (

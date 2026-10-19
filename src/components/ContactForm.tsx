@@ -5,7 +5,7 @@ import { services } from "@/content/data";
 import { site } from "@/lib/site";
 
 const field =
-  "mt-1.5 block w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-60 focus:border-navy focus:outline-none focus:ring-2 focus:ring-orange/40";
+  "mt-1.5 block w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-60 focus:border-charcoal focus:outline-none focus:ring-2 focus:ring-orange/40";
 
 // No backend yet: submitting opens the visitor's mail client with the enquiry pre-filled.
 // TODO: replace with a server action / API route (Resend, HubSpot, etc.) when ready.

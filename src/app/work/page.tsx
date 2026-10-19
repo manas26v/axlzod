@@ -30,14 +30,14 @@ export default function WorkPage() {
         </ButtonLink>
       </PageHero>
 
-      <Section tone="navy" labelledBy="headline">
+      <Section tone="charcoal" labelledBy="headline">
         <h2 id="headline" className="text-sm font-semibold uppercase tracking-[0.18em] text-orange">
           Headline results
         </h2>
         <dl className="mt-8 grid grid-cols-2 gap-6 lg:grid-cols-4">
           {workPage.headline.map((h) => (
-            <div key={h.label} className="flex flex-col-reverse rounded-2xl bg-navy-800 p-6">
-              <dt className="mt-2 text-sm text-navy-100">
+            <div key={h.label} className="flex flex-col-reverse rounded-2xl bg-charcoal-800 p-6">
+              <dt className="mt-2 text-sm text-smoke">
                 <span className="block font-semibold text-paper">{h.label}</span>
                 {h.context}
               </dt>

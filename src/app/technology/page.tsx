@@ -24,16 +24,16 @@ export default function TechnologyPage() {
         </ButtonLink>
       </PageHero>
 
-      <Section tone="navy" labelledBy="reference">
+      <Section tone="charcoal" labelledBy="reference">
         <SectionHeader id="reference" eyebrow="Reference architecture" title={t.layers.title} intro={t.layers.intro} onDark />
         <ol className="mt-12 space-y-3">
           {t.reference.map((r) => (
             <li
               key={r.layer}
-              className="grid gap-3 rounded-2xl border border-paper/10 bg-navy-800 p-5 sm:grid-cols-[180px_1fr_auto] sm:items-center"
+              className="grid gap-3 rounded-2xl border border-paper/10 bg-charcoal-800 p-5 sm:grid-cols-[180px_1fr_auto] sm:items-center"
             >
               <span className="font-display text-lg font-semibold text-orange">{r.layer}</span>
-              <span className="text-navy-100">{r.tools}</span>
+              <span className="text-smoke">{r.tools}</span>
               <ul className="flex flex-wrap gap-2">
                 {r.tags.map((tag) => (
                   <li key={tag} className="rounded-full bg-paper/10 px-3 py-1 text-xs">
@@ -71,10 +71,10 @@ export default function TechnologyPage() {
           {t.choose.flow.map((f, i) => (
             <li
               key={f.title}
-              className={`rounded-2xl p-5 ${i === 0 || i === t.choose.flow.length - 1 ? "bg-orange text-ink" : "border border-paper/15 bg-navy"}`}
+              className={`rounded-2xl p-5 ${i === 0 || i === t.choose.flow.length - 1 ? "bg-orange text-ink" : "border border-paper/15 bg-charcoal"}`}
             >
               <h3 className="font-semibold">{f.title}</h3>
-              <p className={`mt-1 text-sm ${i === 0 || i === t.choose.flow.length - 1 ? "text-ink/80" : "text-navy-100"}`}>{f.desc}</p>
+              <p className={`mt-1 text-sm ${i === 0 || i === t.choose.flow.length - 1 ? "text-ink/80" : "text-smoke"}`}>{f.desc}</p>
             </li>
           ))}
         </ol>
@@ -82,7 +82,7 @@ export default function TechnologyPage() {
           {t.choose.principles.map((p) => (
             <li key={p.title}>
               <h3 className="text-lg font-semibold text-orange">{p.title}</h3>
-              <p className="mt-2 text-navy-100">{p.desc}</p>
+              <p className="mt-2 text-smoke">{p.desc}</p>
             </li>
           ))}
         </ul>

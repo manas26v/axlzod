@@ -20,7 +20,7 @@ export function PageHero({
     <section className="relative overflow-hidden bg-ink text-paper">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-navy-700/60 blur-3xl"
+        className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-charcoal-700/60 blur-3xl"
       />
       <div
         aria-hidden="true"
@@ -31,7 +31,7 @@ export function PageHero({
         <div className="mt-10 max-w-4xl">
           {eyebrow && <Eyebrow onDark>{eyebrow}</Eyebrow>}
           <h1 className="mt-4 text-4xl font-semibold sm:text-5xl lg:text-6xl">{title}</h1>
-          {intro && <p className="mt-6 max-w-2xl text-lg text-navy-100">{intro}</p>}
+          {intro && <p className="mt-6 max-w-2xl text-lg text-smoke">{intro}</p>}
           {children && <div className="mt-8">{children}</div>}
         </div>
       </Container>

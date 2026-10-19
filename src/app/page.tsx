@@ -24,7 +24,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink text-paper">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-[36rem] w-[36rem] rounded-full bg-navy-700/70 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-[36rem] w-[36rem] rounded-full bg-charcoal-700/70 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-10 h-96 w-96 rounded-full bg-orange/20 blur-3xl" />
         <Container className="relative grid gap-14 py-20 sm:py-28 lg:grid-cols-[1.25fr_1fr] lg:items-center">
           <div>
@@ -32,7 +32,7 @@ export default function HomePage() {
             <h1 className="mt-5 text-4xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
               End-to-end <span className="text-orange">AI &amp; software</span> services for ambitious teams
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-navy-100">{home.hero.intro}</p>
+            <p className="mt-6 max-w-xl text-lg text-smoke">{home.hero.intro}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <ButtonLink href="/contact">Book Demo</ButtonLink>
               <ButtonLink href="/work" variant="light">
@@ -42,29 +42,29 @@ export default function HomePage() {
           </div>
 
           {/* Placeholder dashboard visual — replace with the animated version later */}
-          <div className="rounded-3xl border border-paper/10 bg-navy p-6 shadow-2xl" aria-hidden="true">
+          <div className="rounded-3xl border border-paper/10 bg-charcoal p-6 shadow-2xl" aria-hidden="true">
             <div className="flex flex-wrap gap-2">
               {home.hero.layers.map((l) => (
-                <span key={l} className="rounded-full bg-paper/10 px-3 py-1 text-xs text-navy-100">
+                <span key={l} className="rounded-full bg-paper/10 px-3 py-1 text-xs text-smoke">
                   {l}
                 </span>
               ))}
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4">
               {home.hero.metrics.map((m) => (
-                <div key={m.label} className="rounded-2xl bg-navy-800 p-5">
-                  <p className="text-xs uppercase tracking-wider text-navy-100">{m.label}</p>
+                <div key={m.label} className="rounded-2xl bg-charcoal-800 p-5">
+                  <p className="text-xs uppercase tracking-wider text-smoke">{m.label}</p>
                   <p className="mt-2 font-display text-4xl font-semibold text-orange">{m.value}</p>
-                  {m.note && <p className="mt-1 text-xs text-navy-100">{m.note}</p>}
+                  {m.note && <p className="mt-1 text-xs text-smoke">{m.note}</p>}
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex h-24 items-end gap-1.5 rounded-2xl bg-navy-800 p-4">
+            <div className="mt-4 flex h-24 items-end gap-1.5 rounded-2xl bg-charcoal-800 p-4">
               {[30, 45, 38, 60, 52, 70, 64, 82, 76, 94].map((h, i) => (
                 <span key={i} className="flex-1 rounded-t bg-orange/80" style={{ height: `${h}%` }} />
               ))}
             </div>
-            <p className="mt-4 flex items-center gap-2 text-xs text-navy-100">
+            <p className="mt-4 flex items-center gap-2 text-xs text-smoke">
               <span className="h-2 w-2 rounded-full bg-orange" /> live
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
           </h2>
           <ul className="mt-8 grid grid-cols-2 gap-6 text-center sm:grid-cols-4 lg:grid-cols-8">
             {clients.map((c) => (
-              <li key={c} className="font-display text-base font-semibold text-navy/70">
+              <li key={c} className="font-display text-base font-semibold text-charcoal/70">
                 {c}
               </li>
             ))}
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="grid gap-12 lg:grid-cols-2">
           <SectionHeader id="why-matters" eyebrow={home.why.eyebrow} title={home.why.title} onDark />
           <div className="space-y-8">
-            <p className="text-lg text-navy-100">{home.why.body}</p>
+            <p className="text-lg text-smoke">{home.why.body}</p>
             <CheckList items={home.why.points} onDark />
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function HomePage() {
               <div className="mt-6">
                 <CheckList items={p.points} />
               </div>
-              <p className="mt-6 border-t border-line pt-4 font-display font-semibold text-navy">{p.stat}</p>
+              <p className="mt-6 border-t border-line pt-4 font-display font-semibold text-charcoal">{p.stat}</p>
             </article>
           ))}
         </div>
@@ -139,7 +139,7 @@ export default function HomePage() {
       </Section>
 
       {/* Why choose us */}
-      <Section tone="navy" labelledBy="choose">
+      <Section tone="charcoal" labelledBy="choose">
         <SectionHeader
           id="choose"
           eyebrow={home.chooseUs.eyebrow}
@@ -153,18 +153,18 @@ export default function HomePage() {
             <li key={h.title} className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-4 py-2 text-sm">
               <Icon name={h.icon} className="h-4 w-4 text-orange" />
               <span className="font-semibold">{h.title}</span>
-              <span className="text-navy-100">— {h.desc}</span>
+              <span className="text-smoke">— {h.desc}</span>
             </li>
           ))}
         </ul>
         <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChooseUs.map((w, i) => (
-            <li key={w.title} className="rounded-2xl border border-paper/10 bg-navy-800 p-6">
+            <li key={w.title} className="rounded-2xl border border-paper/10 bg-charcoal-800 p-6">
               <span className="font-display text-sm text-orange">
                 {String(i + 1).padStart(2, "0")} / {String(whyChooseUs.length).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-xl font-semibold">{w.title}</h3>
-              <p className="mt-2 text-navy-100">{w.desc}</p>
+              <p className="mt-2 text-smoke">{w.desc}</p>
             </li>
           ))}
         </ol>
@@ -178,7 +178,7 @@ export default function HomePage() {
             <li
               key={f}
               className={`flex aspect-[4/5] items-end rounded-2xl p-5 font-display text-lg font-semibold ${
-                i % 2 ? "bg-navy text-paper" : "bg-ink text-paper"
+                i % 2 ? "bg-charcoal text-paper" : "bg-ink text-paper"
               }`}
             >
               {/* Image placeholder — drop studio photos here later */}
@@ -205,7 +205,7 @@ export default function HomePage() {
             <li key={p.n} className="rounded-2xl border border-line bg-paper p-5">
               <span className="font-display text-3xl font-semibold text-orange">{p.n}</span>
               <h3 className="mt-3 text-lg font-semibold">{p.title}</h3>
-              <p className="mt-1 text-xs font-medium text-navy">{p.duration}</p>
+              <p className="mt-1 text-xs font-medium text-charcoal">{p.duration}</p>
               <p className="mt-3 text-sm text-ink-60">{p.desc}</p>
             </li>
           ))}
@@ -213,7 +213,7 @@ export default function HomePage() {
       </Section>
 
       {/* Industries */}
-      <Section tone="navy" labelledBy="industries">
+      <Section tone="charcoal" labelledBy="industries">
         <SectionHeader
           id="industries"
           eyebrow="Industries"

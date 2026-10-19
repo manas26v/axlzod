@@ -42,7 +42,7 @@ export default function ServicesPage() {
               <Eyebrow>{l.eyebrow}</Eyebrow>
               <h3 className="mt-4 text-2xl font-semibold">{l.title}</h3>
               <p className="mt-3 text-ink-60">{l.copy}</p>
-              <p className="mt-6 border-t border-line pt-4 text-sm font-semibold text-navy">{l.meta}</p>
+              <p className="mt-6 border-t border-line pt-4 text-sm font-semibold text-charcoal">{l.meta}</p>
             </article>
           ))}
         </div>
