@@ -4,7 +4,7 @@ Next.js 16 (App Router) + Tailwind CSS v4. Every page is statically generated.
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000
+npm run dev     # http://localhost:3010
 npm run build && npm start
 ```
 
