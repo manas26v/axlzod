@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Axlzod palette: black & white base, navy for depth, orange for action. */
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-70: #3d3d3d;
+  --color-ink-60: #5c5c5c;
+  --color-paper: #ffffff;
+  --color-mist: #f5f6f8;
+  --color-line: #e4e7ec;
+
+  --color-navy: #0b1d3a;
+  --color-navy-800: #102a52;
+  --color-navy-700: #18376a;
+  --color-navy-100: #dfe6f2;
+  --color-navy-50: #eef2f8;
+
+  --color-orange: #ff6b00;
+  --color-orange-600: #e85d00;
+  /* AA-contrast orange for small text on white */
+  --color-orange-ink: #c2410c;
+  --color-orange-50: #fff3ea;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-orange;
+  }
+  ::selection {
+    @apply bg-orange text-ink;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
