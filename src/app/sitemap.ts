@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/content/data";
+import { concepts } from "@/content/work";
 import { absoluteUrl } from "@/lib/site";
 
 // Bump when content changes meaningfully so crawlers re-fetch.
@@ -19,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/", 1, "weekly"),
     page("/services", 0.9),
     ...services.map((s) => page(`/services/${s.slug}`, 0.9)),
+    page("/work", 0.7),
+    ...concepts.map((c) => page(`/work/${c.slug}`, 0.6)),
     page("/process", 0.7),
     page("/about", 0.7),
     page("/contact", 0.8),

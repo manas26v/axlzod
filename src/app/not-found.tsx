@@ -8,14 +8,16 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="bg-ink py-32 text-paper">
+    <section className="bg-canvas py-28 text-ink sm:py-40">
       <Container className="text-center">
-        <p className="font-display text-8xl font-semibold text-orange">404</p>
-        <h1 className="mt-6 text-3xl font-semibold sm:text-4xl">This page could not be found.</h1>
-        <p className="mt-4 text-smoke">Return to the homepage or explore our services.</p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <p className="text-sm text-muted">Error 404</p>
+        <h1 className="mx-auto mt-5 max-w-4xl text-[2.6rem] leading-[1.02] font-semibold sm:text-7xl">
+          This page could not be found.
+        </h1>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-muted">Return to the homepage or explore our services.</p>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ButtonLink href="/">Go to homepage</ButtonLink>
-          <ButtonLink href="/services" variant="light">
+          <ButtonLink href="/services" variant="ghost">
             Explore services
           </ButtonLink>
         </div>

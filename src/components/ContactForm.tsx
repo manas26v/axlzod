@@ -6,7 +6,7 @@ import { contactCopy as c } from "@/content/pages";
 import { site } from "@/lib/site";
 
 const field =
-  "mt-1.5 block w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-60 focus:border-charcoal focus:outline-none focus:ring-2 focus:ring-orange/40";
+  "mt-1.5 block w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-60 focus:border-ink focus:outline-none focus:ring-2 focus:ring-focus";
 const help = "mt-1.5 block text-xs font-normal text-ink-60";
 
 // No backend: submitting opens the visitor's mail client with a draft they must send themselves.
@@ -38,7 +38,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-line bg-paper p-6 shadow-sm sm:p-8">
+    <form onSubmit={onSubmit} className="space-y-5 rounded-[1.75rem] border border-line bg-surface p-6 shadow-soft sm:p-10">
       <fieldset disabled={!email} className="space-y-5 disabled:opacity-60">
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block text-sm font-medium">
@@ -87,7 +87,7 @@ export function ContactForm() {
         </div>
         <button
           type="submit"
-          className="w-full rounded-full bg-orange px-6 py-3.5 font-semibold text-ink transition-colors hover:bg-orange-600"
+          className="w-full rounded-full bg-action px-6 py-3.5 font-semibold text-action-ink transition-colors hover:bg-action-hover"
         >
           {c.button}
         </button>

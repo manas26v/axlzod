@@ -30,12 +30,13 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="charcoal" labelledBy="values">
-        <SectionHeader id="values" title={about.values.title} onDark />
-        <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {principles.map((p) => (
-            <li key={p.title} className="rounded-2xl border border-paper/10 bg-charcoal-800 p-6">
-              <h3 className="text-xl font-semibold">{p.title}</h3>
-              <p className="mt-2 text-smoke">{p.desc}</p>
+        <SectionHeader id="values" title={about.values.title} />
+        <ul className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+          {principles.map((p, i) => (
+            <li key={p.title} className="border-t border-ink pt-6">
+              <span className="text-sm text-muted">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-4 text-xl font-semibold">{p.title}</h3>
+              <p className="mt-2 text-muted">{p.desc}</p>
             </li>
           ))}
         </ul>

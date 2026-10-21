@@ -3,9 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { nav } from "@/lib/site";
 import { Logo } from "./Logo";
+
+// Contact is the pill on the right, so the centred list omits it.
+const centreNav = nav.filter((n) => n.href !== "/contact");
 
 export function Header() {
   const pathname = usePathname();
@@ -14,24 +17,24 @@ export function Header() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-paper/10 bg-ink/95 text-paper backdrop-blur supports-[backdrop-filter]:bg-ink/80">
+    <header className="sticky top-0 z-50 bg-canvas/90 text-ink backdrop-blur supports-[backdrop-filter]:bg-canvas/75">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:rounded focus:bg-orange focus:px-3 focus:py-2 focus:text-ink"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:rounded-full focus:bg-action focus:px-4 focus:py-2 focus:text-action-ink"
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto] items-center px-5 sm:px-8 md:grid-cols-[1fr_auto_1fr]">
         <Logo />
         <nav aria-label="Main" className="hidden md:block">
-          <ul className="flex items-center gap-8">
-            {nav.map((item) => (
+          <ul className="flex items-center gap-9">
+            {centreNav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`text-sm font-medium transition-colors hover:text-orange ${
-                    isActive(item.href) ? "text-orange" : "text-paper/80"
+                  className={`text-[0.95rem] underline-offset-[6px] transition-colors hover:underline ${
+                    isActive(item.href) ? "text-ink underline" : "text-ink/80"
                   }`}
                 >
                   {item.label}
@@ -40,43 +43,41 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-end gap-3">
           <Link
             href="/contact"
-            className="hidden rounded-full bg-orange px-5 py-2 text-sm font-semibold text-ink transition-colors hover:bg-orange-600 sm:inline-flex"
+            aria-current={isActive("/contact") ? "page" : undefined}
+            className="hidden items-center gap-1.5 rounded-full bg-action px-5 py-2.5 text-[0.95rem] font-medium text-action-ink transition-colors hover:bg-action-hover sm:inline-flex"
           >
-            Discuss your project
+            Contact
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line-strong md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
           </button>
         </div>
       </div>
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-paper/10 md:hidden" onClick={() => setOpen(false)}>
-          <ul className="space-y-1 px-4 py-4">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-line md:hidden" onClick={() => setOpen(false)}>
+          <ul className="px-5 py-4">
             {nav.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="border-b border-line last:border-0">
                 <Link
                   href={item.href}
-                  className="block rounded-lg px-3 py-2 text-base font-medium text-paper/90 hover:bg-paper/10"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className="block py-3 text-2xl font-semibold tracking-tight"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
-              <Link href="/contact" className="block rounded-full bg-orange px-5 py-3 text-center font-semibold text-ink">
-                Discuss your project
-              </Link>
-            </li>
           </ul>
         </nav>
       )}

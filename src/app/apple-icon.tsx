@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { brandColors } from "@/lib/brand-colors";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
@@ -13,8 +14,8 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#161616",
-          color: "#ff6b00",
+          background: brandColors.ink,
+          color: brandColors.lilac,
           fontSize: 120,
           fontWeight: 700,
         }}

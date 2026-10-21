@@ -40,14 +40,19 @@ export default function ProcessPage() {
         <h2 id="stages" className="sr-only">
           Project stages
         </h2>
-        <ol className="grid gap-6 md:grid-cols-2">
+        <ol className="border-b border-line">
           {processPhases.map((p) => (
-            <li key={p.n} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
-              <span className="font-display text-4xl font-semibold text-orange">{p.n}</span>
-              <h3 className="mt-4 text-xl font-semibold">{p.title}</h3>
-              <p className="mt-2 flex-1 text-ink-60">{p.desc}</p>
-              <p className="mt-5 border-t border-line pt-5 text-sm text-ink-70">
-                <span className="font-semibold text-charcoal">You receive: </span>
+            <li key={p.n} className="grid gap-4 border-t border-line py-10 md:grid-cols-[8rem_1fr_1fr] md:gap-10">
+              <span className="text-6xl font-semibold tracking-tight">{p.n}</span>
+              <div>
+                <h3 className="text-2xl font-semibold">{p.title}</h3>
+                <p className="mt-3 text-muted">{p.desc}</p>
+              </div>
+              <p className="self-end text-muted md:border-l md:border-line md:pl-10">
+                <span className="mb-1 flex items-center gap-2 font-semibold text-ink">
+                  <span className="h-2 w-2 rounded-full bg-lime" aria-hidden="true" />
+                  You receive:{" "}
+                </span>
                 {p.receive}
               </p>
             </li>

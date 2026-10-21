@@ -1,30 +1,55 @@
 @import "tailwindcss";
+@import "./theme.css";
 
-/* Axlzod palette: black & white with orange for action. Charcoal greys add depth between black sections. */
-@theme {
-  --color-ink: #0a0a0a;
-  --color-ink-70: #3d3d3d;
-  --color-ink-60: #5c5c5c;
-  --color-paper: #ffffff;
-  --color-mist: #f5f5f5;
-  --color-line: #e5e5e5;
+/*
+ * Tailwind tokens point at the semantic custom properties in ./theme.css.
+ * Do not add raw colour values here; adjust theme.css instead.
+ * The legacy names (paper, mist, charcoal, orange …) are kept as aliases so pages
+ * not yet restyled keep rendering with the new palette.
+ */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-action: var(--action-bg);
+  --color-action-ink: var(--action-ink);
+  --color-action-hover: var(--action-bg-hover);
+  --color-lilac: var(--accent-lilac);
+  --color-blue: var(--accent-blue);
+  --color-lime: var(--accent-lime);
+  --color-rose: var(--accent-rose);
+  --color-footer: var(--footer-bg);
+  --color-footer-ink: var(--footer-ink);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-line: var(--footer-line);
 
-  --color-charcoal: #161616;
-  --color-charcoal-800: #1f1f1f;
-  --color-charcoal-700: #2e2e2e;
-  /* secondary text on dark backgrounds */
-  --color-smoke: #d4d4d4;
-  /* subtle chip / tag background on white */
-  --color-fog: #f0f0f0;
+  --color-focus: var(--focus);
+  --shadow-soft: var(--elevation-soft);
+  --shadow-device: var(--elevation-device);
+  --shadow-device-lg: var(--elevation-device-lg);
 
-  --color-orange: #ff6b00;
-  --color-orange-600: #e85d00;
-  /* AA-contrast orange for small text on white */
-  --color-orange-ink: #c2410c;
-  --color-orange-50: #fff3ea;
+  /* Legacy aliases: older class names resolve to the light editorial palette. */
+  --color-ink-70: var(--muted);
+  --color-ink-60: var(--muted);
+  --color-paper: var(--surface);
+  --color-mist: var(--surface-muted);
+  --color-fog: var(--surface-muted);
+  --color-charcoal: var(--ink);
+  --color-charcoal-800: var(--surface);
+  --color-charcoal-700: var(--line);
+  --color-smoke: var(--muted);
+  --color-orange: var(--ink);
+  --color-orange-600: var(--action-bg-hover);
+  --color-orange-ink: var(--ink);
+  --color-orange-50: var(--surface-muted);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -32,7 +57,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-paper text-ink antialiased;
+    @apply bg-canvas text-ink antialiased;
   }
   h1,
   h2,
@@ -41,15 +66,46 @@
     @apply font-display tracking-tight text-balance;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-orange;
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--focus-on-dark);
   }
   ::selection {
-    @apply bg-orange text-ink;
+    background: var(--selection-bg);
+    color: var(--selection-ink);
+  }
+}
+
+@layer components {
+  .panel-lilac {
+    background: var(--panel-lilac);
+  }
+  .panel-blue {
+    background: var(--panel-blue);
+  }
+  .panel-lime {
+    background: var(--panel-lime);
+  }
+  .panel-neutral {
+    background: var(--panel-neutral);
+  }
+  /* Dotted rings for the capability diagram */
+  .ring-dotted {
+    border: 1.5px dashed var(--line-strong);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

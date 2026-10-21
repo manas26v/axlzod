@@ -1,0 +1,65 @@
+/*
+ * Axlzod theme: "white studio" variant.
+ *
+ * This file is the ONLY place palette values live. Components use Tailwind utilities
+ * (bg-canvas, text-ink, border-line …) that resolve to the custom properties below,
+ * so changing a value here re-grades the whole site. See docs/design-variant.md.
+ *
+ * Contrast notes (WCAG 2.2):
+ *   --ink   on --canvas  ≈ 15:1   body and headings
+ *   --muted on --canvas  ≈ 6.4:1  secondary copy (AA for body text)
+ *   --footer-muted on --footer-bg ≈ 7.4:1
+ *   Accents are decorative (markers, preview backgrounds). Never put body text in an
+ *   accent colour; dark ink on any accent background passes AA.
+ */
+:root {
+  /* Page + surfaces */
+  --canvas: #fafafa; /* almost-white page background */
+  --surface: #ffffff; /* cards, frames, mock screens */
+  --surface-muted: #f1f1f3; /* quiet bands, chips, mock UI fills */
+
+  /* Text */
+  --ink: #232325; /* soft charcoal, headings + body */
+  --muted: #5c5c63; /* secondary copy */
+  --subtle: #9a9aa1; /* decorative only (ring labels, rules); not for essential text */
+
+  /* Lines */
+  --line: #e4e4e7; /* hairline dividers */
+  --line-strong: #c9c9ce; /* outlined pills, dotted diagram rings */
+
+  /* Action (primary pill) */
+  --action-bg: #232325;
+  --action-ink: #ffffff;
+  --action-bg-hover: #000000;
+
+  /* Restrained accents: markers and preview panels only */
+  --accent-lilac: #b7a6ff;
+  --accent-blue: #86b4ff;
+  --accent-lime: #c9f26b;
+  --accent-rose: #ff9db4;
+
+  /* Wide preview panel washes (built from the accents above, kept soft) */
+  --panel-lilac: radial-gradient(120% 90% at 50% 0%, #ffffff 0%, #ece8ff 45%, #dfe8ff 100%);
+  --panel-blue: radial-gradient(110% 100% at 20% 10%, #ffffff 0%, #e4eeff 55%, #ece8ff 100%);
+  --panel-lime: radial-gradient(110% 100% at 80% 0%, #ffffff 0%, #f1fbd9 55%, #e8eefb 100%);
+  --panel-neutral: linear-gradient(180deg, #f4f4f6 0%, #ececef 100%);
+
+  /* Footer */
+  --footer-bg: #1d1d1f;
+  --footer-ink: #f5f5f7;
+  --footer-muted: #ababb2;
+  --footer-line: #3a3a3e;
+
+  /* Focus ring */
+  --focus: #3d5afe;
+  --focus-on-dark: #b7a6ff;
+
+  /* Elevation (device mockups, form card) */
+  --elevation-soft: 0 1px 2px rgb(20 20 22 / 0.06);
+  --elevation-device: 0 30px 60px -30px rgb(20 20 22 / 0.25);
+  --elevation-device-lg: 0 40px 80px -40px rgb(20 20 22 / 0.3);
+
+  /* Selection */
+  --selection-bg: #dcd3ff;
+  --selection-ink: #232325;
+}

@@ -13,15 +13,15 @@ export function ContactSection({ title, eyebrow = "Contact" }: { title: string; 
           <h2 id="contact-title" className="mt-3 text-3xl font-semibold sm:text-5xl">
             {title}
           </h2>
-          <p className="mt-4 text-lg text-ink-60">{contactCopy.intro}</p>
+          <p className="mt-5 text-lg text-muted">{contactCopy.intro}</p>
 
-          <div className="mt-10 rounded-2xl bg-charcoal p-6 text-paper">
-            <h3 className="font-semibold">{contactCopy.nextSteps.title}</h3>
-            <p className="mt-2 text-sm text-smoke">{contactCopy.nextSteps.body}</p>
+          <div className="mt-12 border-t border-line pt-8">
+            <h3 className="text-xl font-semibold">{contactCopy.nextSteps.title}</h3>
+            <p className="mt-3 text-muted">{contactCopy.nextSteps.body}</p>
             {site.email && (
               <p className="mt-5 flex items-center gap-3 text-sm">
-                <Mail className="h-4 w-4 text-orange" aria-hidden="true" />
-                <a href={`mailto:${site.email}`} className="hover:text-orange">
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                <a href={`mailto:${site.email}`} className="underline-offset-4 hover:underline">
                   {site.email}
                 </a>
               </p>
