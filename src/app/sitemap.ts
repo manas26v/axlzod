@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
-import { caseStudies, industries, services } from "@/content/data";
+import { services } from "@/content/data";
 import { absoluteUrl } from "@/lib/site";
 
 // Bump when content changes meaningfully so crawlers re-fetch.
-const lastModified = new Date("2026-10-19");
+const lastModified = new Date("2026-10-21");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const page = (path: string, priority: number, changeFrequency: "weekly" | "monthly" | "yearly" = "monthly") => ({
@@ -13,19 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   });
 
+  // Privacy and terms are placeholders until the owner supplies operator and processing facts,
+  // so they stay out of the sitemap (see docs/content/03-content-audit.md).
   return [
     page("/", 1, "weekly"),
-    page("/services", 0.9, "weekly"),
-    page("/industries", 0.8),
-    page("/work", 0.8, "weekly"),
-    page("/about", 0.7),
-    page("/process", 0.7),
-    page("/technology", 0.7),
-    page("/contact", 0.8),
+    page("/services", 0.9),
     ...services.map((s) => page(`/services/${s.slug}`, 0.9)),
-    ...industries.map((i) => page(`/industries/${i.slug}`, 0.8)),
-    ...caseStudies.map((c) => page(`/work/${c.slug}`, 0.7)),
-    page("/privacy", 0.2, "yearly"),
-    page("/terms", 0.2, "yearly"),
+    page("/process", 0.7),
+    page("/about", 0.7),
+    page("/contact", 0.8),
   ];
 }

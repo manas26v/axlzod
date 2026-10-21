@@ -1,48 +1,38 @@
 // Single source of truth for brand + contact details used across pages, metadata and JSON-LD.
-// TODO: replace the contact details below with Axlzod's real email, phone and address.
+// Unverified owner facts (legal operator, address, phone, enquiry inbox) are intentionally absent.
+// See docs/content/03-content-audit.md before adding any of them.
 export const site = {
   name: "Axlzod",
-  legalName: "Axlzod",
-  tagline: "Human Ambition. Machine Speed.",
+  tagline: "Websites, software and practical advice",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://axlzod.com").replace(/\/$/, ""),
-  title: "End-to-End AI & Software Services",
+  title: "Business Websites & Web Products",
   description:
-    "End-to-end AI and software services: AI consulting, MVP development, custom ERP and CRM, web and mobile apps, SaaS, cloud and DevOps, data engineering. Human Ambition. Machine Speed.",
-  email: "info@axlzod.com",
-  phone: "+91 88962 07864",
-  address: {
-    street: "Indra Nagar",
-    city: "Lucknow",
-    region: "Uttar Pradesh",
-    regionShort: "UP",
-    country: "India",
-    countryCode: "IN",
-  },
+    "Business websites, product planning and focused web applications for small businesses. Explore Axlzod’s approach to scope, delivery and handover.",
+  /**
+   * Monitored enquiry inbox. Keep null until the owner confirms the address is live and monitored;
+   * while null, the contact form is disabled and no mailto links are rendered.
+   */
+  email: null as string | null,
   locale: "en_IN",
   copyrightYear: 2026,
   keywords: [
-    "AI consulting",
-    "AI transformation",
-    "MVP development",
-    "custom ERP development",
-    "custom CRM development",
+    "business website development",
+    "small business website",
+    "website planning",
+    "product planning",
     "web application development",
-    "mobile app development",
-    "SaaS development",
-    "cloud and DevOps consulting",
-    "data engineering",
-    "product engineering",
-    "software development company India",
+    "client portal development",
+    "website maintenance",
     "Axlzod",
   ],
   social: [] as string[], // e.g. "https://www.linkedin.com/company/axlzod"
-} as const;
+};
 
 export const nav = [
   { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
-  { label: "Work", href: "/work" },
-  { label: "Company", href: "/about" },
+  { label: "How we work", href: "/process" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const absoluteUrl = (path = "/") => `${site.url}${path === "/" ? "" : path}`;

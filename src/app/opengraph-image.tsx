@@ -8,7 +8,7 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOg({
     eyebrow: site.tagline,
-    title: "End-to-end AI & software services for ambitious teams",
-    subtitle: "AI consulting · MVPs · Custom ERP & CRM · Web & mobile · Cloud & data",
+    title: "A clearer website. A useful product. A practical next step.",
+    subtitle: "Business websites · Product planning · Focused web products · Maintenance",
   });
 }

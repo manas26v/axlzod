@@ -45,7 +45,7 @@ export function Header() {
             href="/contact"
             className="hidden rounded-full bg-orange px-5 py-2 text-sm font-semibold text-ink transition-colors hover:bg-orange-600 sm:inline-flex"
           >
-            Book Demo
+            Discuss your project
           </Link>
           <button
             type="button"
@@ -62,7 +62,7 @@ export function Header() {
       {open && (
         <nav id="mobile-nav" aria-label="Mobile" className="border-t border-paper/10 md:hidden" onClick={() => setOpen(false)}>
           <ul className="space-y-1 px-4 py-4">
-            {[...nav, { label: "Process", href: "/process" }, { label: "Technology", href: "/technology" }].map((item) => (
+            {nav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -74,7 +74,7 @@ export function Header() {
             ))}
             <li className="pt-2">
               <Link href="/contact" className="block rounded-full bg-orange px-5 py-3 text-center font-semibold text-ink">
-                Book Demo
+                Discuss your project
               </Link>
             </li>
           </ul>

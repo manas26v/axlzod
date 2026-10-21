@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { CaseStudy, Faq, Industry, Service } from "@/content/types";
+import type { Faq, Service } from "@/content/types";
 import { absoluteUrl, site } from "./site";
 
 type PageMeta = {
@@ -47,30 +47,14 @@ export function organizationJsonLd() {
         "@type": ["Organization", "ProfessionalService"],
         "@id": orgId,
         name: site.name,
-        legalName: site.legalName,
         url: site.url,
         logo: absoluteUrl("/icon.svg"),
         image: absoluteUrl("/opengraph-image"),
         description: site.description,
         slogan: site.tagline,
-        email: site.email,
-        telephone: site.phone,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: site.address.street,
-          addressLocality: site.address.city,
-          addressRegion: site.address.region,
-          addressCountry: site.address.countryCode,
-        },
-        areaServed: "Worldwide",
-        sameAs: site.social,
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "sales",
-          email: site.email,
-          telephone: site.phone,
-          availableLanguage: ["English", "Hindi"],
-        },
+        // Contact, address and legal-name fields are added only once verified (see site.ts).
+        ...(site.email ? { email: site.email } : {}),
+        ...(site.social.length ? { sameAs: site.social } : {}),
       },
       {
         "@type": "WebSite",
@@ -116,45 +100,9 @@ export function serviceJsonLd(service: Service) {
     "@type": "Service",
     name: service.title,
     serviceType: service.title,
-    description: service.short,
+    description: service.seoDescription,
     url: absoluteUrl(`/services/${service.slug}`),
     provider: { "@id": orgId },
-    areaServed: "Worldwide",
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: `${service.title} capabilities`,
-      itemListElement: service.capabilities.map((c) => ({
-        "@type": "Offer",
-        itemOffered: { "@type": "Service", name: c.title, description: c.desc },
-      })),
-    },
-  };
-}
-
-export function industryJsonLd(industry: Industry) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: `${industry.label} software development`,
-    description: industry.short,
-    url: absoluteUrl(`/industries/${industry.slug}`),
-    about: { "@type": "Thing", name: industry.label },
-    publisher: { "@id": orgId },
-  };
-}
-
-export function caseStudyJsonLd(cs: CaseStudy) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: cs.title,
-    description: cs.summary,
-    url: absoluteUrl(`/work/${cs.slug}`),
-    image: absoluteUrl(`/work/${cs.slug}/opengraph-image`),
-    author: { "@id": orgId },
-    publisher: { "@id": orgId },
-    about: cs.tag,
-    keywords: cs.stack.join(", "),
   };
 }
 

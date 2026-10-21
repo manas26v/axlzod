@@ -10,70 +10,35 @@ export interface TitleDesc {
   desc: string;
 }
 
+/** A titled block of service-page copy: paragraphs, a bullet list, or both. */
+export interface ServiceSection {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+}
+
 export interface Service {
   slug: string;
   title: string;
+  /** Card summary used on Home, Services and related-service lists. */
   short: string;
+  /** Card link label, e.g. "Explore business websites". */
+  linkLabel: string;
+  seoTitle: string;
+  seoDescription: string;
   headline: string;
-  overview: string[];
-  capabilities: TitleDesc[];
-  deliverables: string[];
-  outcomes: string[];
+  intro: string;
+  sections: ServiceSection[];
   faqs: Faq[];
-  industries: string[];
+  cta: string;
   icon: IconName;
-  /** "How it works" — four steps from first conversation to running system. */
-  steps: TitleDesc[];
-}
-
-export interface Industry {
-  slug: string;
-  label: string;
-  headline: string;
-  short: string;
-  overview: string;
-  challenges: string[];
-  solutions: TitleDesc[];
-  services: string[];
-  compliance: string[];
-  icon: IconName;
-}
-
-export interface CaseStudy {
-  slug: string;
-  tag: string;
-  industry: string;
-  title: string;
-  summary: string;
-  challenge: string;
-  solution: string;
-  approach: TitleDesc[];
-  stack: string[];
-  impact: string[];
-  services: string[];
-  duration: string;
-  team: string;
 }
 
 export interface ProcessPhase {
   n: string;
   title: string;
   desc: string;
-  duration: string;
-  activities: string[];
-  deliverables: string[];
-}
-
-export interface TechGroup {
-  group: string;
-  desc: string;
-  items: string[];
-}
-
-export interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
+  receive: string;
 }
 
 export type Principle = TitleDesc;

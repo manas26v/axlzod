@@ -4,25 +4,29 @@ import { Section } from "@/components/ui";
 import { buildMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions",
-  description: `Terms & Conditions for ${site.name}.`,
-  path: "/terms",
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: "Terms",
+    description: `Website terms for ${site.name}. These terms are being prepared.`,
+    path: "/terms",
+  }),
+  // Placeholder until the owner supplies operator and commercial facts (docs/content/03-content-audit.md).
+  robots: { index: false, follow: true },
+};
 
-// TODO: replace with the real legal text before launch.
+// TODO: replace with final website terms once the operator, licensing and jurisdiction are confirmed.
 export default function Page() {
   return (
     <>
-      <PageHero crumbs={[{ name: "Terms & Conditions", path: "/terms" }]} title="Terms & Conditions" />
+      <PageHero crumbs={[{ name: "Terms", path: "/terms" }]} title="Terms" />
       <Section tone="light">
-        <p className="max-w-2xl text-ink-60">
-          This page is being prepared. For questions, contact us at{" "}
-          <a href={`mailto:${site.email}`} className="font-medium text-orange-ink underline">
-            {site.email}
-          </a>
-          .
-        </p>
+        <div className="max-w-2xl space-y-5 text-ink-70">
+          <p>These website terms are being prepared and are not yet complete.</p>
+          <p>
+            Information on this website describes the kinds of work we offer. Any project is governed by a separate
+            written proposal and agreement covering its scope, responsibilities and fees.
+          </p>
+        </div>
       </Section>
     </>
   );
